@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FilmPort</title>
+<title>FilmPort — Film İzlə</title>
 
 <style>
 * {
@@ -14,33 +14,35 @@
 }
 
 body {
-    background: #0b0b0f;
-    color: #ffffff;
+    background: #09090b;
+    color: #fff;
     font-family: Arial, sans-serif;
 }
 
+/* HEADER */
+
 header {
-    background: #111116;
-    padding: 18px 20px;
     position: sticky;
     top: 0;
-    z-index: 10;
-    border-bottom: 1px solid #24242b;
+    z-index: 100;
+    background: rgba(10,10,12,0.96);
+    border-bottom: 1px solid #222;
+    backdrop-filter: blur(10px);
 }
 
 .header {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
+    padding: 16px 18px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 15px;
+    gap: 25px;
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: bold;
-    color: #ffffff;
+    font-size: 27px;
+    font-weight: 800;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -49,75 +51,149 @@ header {
 
 .search {
     flex: 1;
-    max-width: 400px;
 }
 
 .search input {
     width: 100%;
-    padding: 11px 15px;
-    border-radius: 8px;
-    border: 1px solid #33333b;
-    background: #1a1a20;
+    max-width: 500px;
+    background: #18181c;
+    border: 1px solid #303036;
     color: white;
+    padding: 12px 16px;
+    border-radius: 9px;
     outline: none;
+    font-size: 14px;
 }
+
+.search input:focus {
+    border-color: #e50914;
+}
+
+/* CONTAINER */
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
-    padding: 25px 15px;
+    padding: 25px 18px 50px;
 }
 
+/* HERO */
+
 .hero {
-    background: linear-gradient(135deg, #19191f, #0d0d11);
-    border-radius: 14px;
-    padding: 35px 25px;
-    margin-bottom: 30px;
-    border: 1px solid #27272f;
+    min-height: 280px;
+    border-radius: 18px;
+    padding: 45px 30px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #111114 20%, rgba(17,17,20,.75), rgba(17,17,20,.2)),
+        radial-gradient(circle at 80% 30%, #6d1118, transparent 40%),
+        #141418;
+    border: 1px solid #29292f;
+    margin-bottom: 35px;
+}
+
+.hero-content {
+    max-width: 600px;
 }
 
 .hero h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 42px;
+    margin-bottom: 14px;
+}
+
+.hero h1 span {
+    color: #e50914;
 }
 
 .hero p {
-    color: #aaa;
-    line-height: 1.6;
+    color: #b7b7bd;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
-.section-title {
-    font-size: 22px;
+.hero-button {
+    display: inline-block;
+    margin-top: 22px;
+    background: #e50914;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* SECTION */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 18px;
 }
 
+.section-title {
+    font-size: 23px;
+}
+
+.section-title span {
+    color: #e50914;
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: flex;
+    gap: 9px;
+    overflow-x: auto;
+    margin-bottom: 28px;
+    padding-bottom: 5px;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.category {
+    white-space: nowrap;
+    background: #18181c;
+    border: 1px solid #29292f;
+    padding: 9px 15px;
+    border-radius: 20px;
+    color: #bbb;
+    font-size: 13px;
+}
+
+/* MOVIES */
+
 .movies {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
 }
 
 .movie {
-    background: #15151b;
+    background: #141418;
+    border: 1px solid #24242a;
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #25252d;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .movie:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     border-color: #e50914;
 }
 
 .poster {
-    height: 240px;
-    background: linear-gradient(135deg, #27272e, #111116);
+    height: 260px;
+    background:
+        linear-gradient(135deg, #27272d, #111115);
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #777;
-    font-size: 14px;
+    align-items: center;
+    color: #666;
+    font-size: 13px;
 }
 
 .movie-info {
@@ -125,69 +201,103 @@ header {
 }
 
 .movie-info h3 {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .movie-info p {
-    color: #888;
-    font-size: 13px;
+    color: #777;
+    font-size: 12px;
 }
 
 .watch {
-    display: inline-block;
-    margin-top: 10px;
+    display: block;
+    text-align: center;
+    margin-top: 11px;
+    padding: 8px;
+    border-radius: 6px;
     background: #e50914;
     color: white;
-    padding: 8px 13px;
-    border-radius: 6px;
     text-decoration: none;
     font-size: 13px;
+    font-weight: bold;
 }
 
+/* AD */
+
 .ad {
-    margin: 30px 0;
+    margin: 35px 0;
     min-height: 100px;
-    background: #111116;
-    border: 1px dashed #33333b;
+    background: #111114;
+    border: 1px dashed #333339;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
+    color: #555;
+    font-size: 12px;
 }
+
+/* FOOTER */
 
 footer {
-    margin-top: 50px;
-    padding: 25px;
+    border-top: 1px solid #222;
+    padding: 30px 20px;
     text-align: center;
     color: #666;
-    border-top: 1px solid #22222a;
+    font-size: 13px;
 }
 
-@media (max-width: 800px) {
+/* TABLET */
+
+@media(max-width: 900px) {
+
     .movies {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .poster {
-        height: 210px;
+        height: 230px;
     }
+
 }
 
-@media (max-width: 600px) {
+/* MOBILE */
+
+@media(max-width: 650px) {
 
     .header {
         flex-direction: column;
-        align-items: stretch;
+        gap: 12px;
+        padding: 14px;
     }
 
     .logo {
-        text-align: center;
+        font-size: 25px;
     }
 
-    .search {
+    .search input {
         max-width: none;
+    }
+
+    .container {
+        padding: 18px 12px 40px;
+    }
+
+    .hero {
+        min-height: 240px;
+        padding: 30px 22px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 14px;
     }
 
     .movies {
@@ -196,12 +306,31 @@ footer {
     }
 
     .poster {
-        height: 230px;
+        height: 235px;
+    }
+
+    .movie-info {
+        padding: 10px;
+    }
+
+    .movie-info h3 {
+        font-size: 14px;
+    }
+
+}
+
+/* SMALL PHONE */
+
+@media(max-width: 380px) {
+
+    .poster {
+        height: 205px;
     }
 
     .hero h1 {
         font-size: 26px;
     }
+
 }
 </style>
 </head>
@@ -209,6 +338,7 @@ footer {
 <body>
 
 <header>
+
     <div class="header">
 
         <div class="logo">
@@ -219,101 +349,203 @@ footer {
             <input
                 type="text"
                 id="search"
-                placeholder="Film axtar..."
+                placeholder="🔍 Film axtar..."
                 onkeyup="searchMovies()"
             >
         </div>
 
     </div>
+
 </header>
+
 
 <main class="container">
 
+    <!-- HERO -->
+
     <section class="hero">
-        <h1>FilmPort</h1>
-        <p>
-            Filmləri rahat şəkildə kəşf et və izlə.
-        </p>
+
+        <div class="hero-content">
+
+            <h1>
+                FilmPort-a <span>xoş gəlmisən</span>
+            </h1>
+
+            <p>
+                Sevdiyin filmləri kəşf et, məlumatlarına bax
+                və rahat şəkildə izlə.
+            </p>
+
+            <a href="#movies" class="hero-button">
+                Filmlərə bax
+            </a>
+
+        </div>
+
     </section>
 
-    <h2 class="section-title">Filmlər</h2>
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <div class="category">🎬 Bütün filmlər</div>
+        <div class="category">🔥 Populyar</div>
+        <div class="category">⭐ IMDB</div>
+        <div class="category">😂 Komediya</div>
+        <div class="category">💥 Aksiyon</div>
+        <div class="category">👻 Qorxu</div>
+        <div class="category">❤️ Dram</div>
+
+    </div>
+
+
+    <!-- MOVIES -->
+
+    <div class="section-header">
+
+        <h2 class="section-title">
+            Son <span>filmlər</span>
+        </h2>
+
+    </div>
+
 
     <div class="movies" id="movies">
 
+
         <div class="movie">
+
             <div class="poster">
                 POSTER
             </div>
 
             <div class="movie-info">
+
                 <h3>Film 1</h3>
-                <p>2026 • Film</p>
+
+                <p>
+                    2026 • Film
+                </p>
 
                 <a href="#" class="watch">
-                    İzlə
+                    ▶ İzlə
                 </a>
+
             </div>
+
         </div>
 
 
         <div class="movie">
+
             <div class="poster">
                 POSTER
             </div>
 
             <div class="movie-info">
+
                 <h3>Film 2</h3>
-                <p>2026 • Film</p>
+
+                <p>
+                    2026 • Film
+                </p>
 
                 <a href="#" class="watch">
-                    İzlə
+                    ▶ İzlə
                 </a>
+
             </div>
+
         </div>
 
 
         <div class="movie">
+
             <div class="poster">
                 POSTER
             </div>
 
             <div class="movie-info">
+
                 <h3>Film 3</h3>
-                <p>2026 • Film</p>
+
+                <p>
+                    2026 • Film
+                </p>
 
                 <a href="#" class="watch">
-                    İzlə
+                    ▶ İzlə
                 </a>
+
             </div>
+
         </div>
 
 
         <div class="movie">
+
             <div class="poster">
                 POSTER
             </div>
 
             <div class="movie-info">
+
                 <h3>Film 4</h3>
-                <p>2026 • Film</p>
+
+                <p>
+                    2026 • Film
+                </p>
 
                 <a href="#" class="watch">
-                    İzlə
+                    ▶ İzlə
                 </a>
+
             </div>
+
         </div>
 
+
+        <div class="movie">
+
+            <div class="poster">
+                POSTER
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Film 5</h3>
+
+                <p>
+                    2026 • Film
+                </p>
+
+                <a href="#" class="watch">
+                    ▶ İzlə
+                </a>
+
+            </div>
+
+        </div>
+
+
     </div>
 
-    <!-- HILLTOPADS REKLAM YERİ -->
+
+    <!-- REKLAM YERİ -->
+
     <div class="ad">
-        REKLAM
+        REKLAM YERİ
     </div>
+
 
 </main>
 
+
 <footer>
-    © 2026 FilmPort
+
+    © 2026 FilmPort — Bütün hüquqlar qorunur.
+
 </footer>
 
 
@@ -322,27 +554,35 @@ footer {
 function searchMovies() {
 
     let input =
-        document.getElementById("search")
+        document
+        .getElementById("search")
         .value
         .toLowerCase();
 
     let movies =
-        document.querySelectorAll(".movie");
+        document
+        .querySelectorAll(".movie");
 
     movies.forEach(function(movie) {
 
         let title =
-            movie.querySelector("h3")
+            movie
+            .querySelector("h3")
             .innerText
             .toLowerCase();
 
         if (title.includes(input)) {
+
             movie.style.display = "";
+
         } else {
+
             movie.style.display = "none";
+
         }
 
     });
+
 }
 
 </script>
