@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FilmPort</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0b0f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #111116;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #24242b;
+}
+
+.header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+.search {
+    flex: 1;
+    max-width: 400px;
+}
+
+.search input {
+    width: 100%;
+    padding: 11px 15px;
+    border-radius: 8px;
+    border: 1px solid #33333b;
+    background: #1a1a20;
+    color: white;
+    outline: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #19191f, #0d0d11);
+    border-radius: 14px;
+    padding: 35px 25px;
+    margin-bottom: 30px;
+    border: 1px solid #27272f;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.movie {
+    background: #15151b;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #25252d;
+    transition: 0.2s;
+}
+
+.movie:hover {
+    transform: translateY(-3px);
+    border-color: #e50914;
+}
+
+.poster {
+    height: 240px;
+    background: linear-gradient(135deg, #27272e, #111116);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 14px;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-info h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.movie-info p {
+    color: #888;
+    font-size: 13px;
+}
+
+.watch {
+    display: inline-block;
+    margin-top: 10px;
+    background: #e50914;
+    color: white;
+    padding: 8px 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.ad {
+    margin: 30px 0;
+    min-height: 100px;
+    background: #111116;
+    border: 1px dashed #33333b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #22222a;
+}
+
+@media (max-width: 800px) {
+    .movies {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .poster {
+        height: 210px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .search {
+        max-width: none;
+    }
+
+    .movies {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .poster {
+        height: 230px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header">
+
+        <div class="logo">
+            Film<span>Port</span>
+        </div>
+
+        <div class="search">
+            <input
+                type="text"
+                id="search"
+                placeholder="Film axtar..."
+                onkeyup="searchMovies()"
+            >
+        </div>
+
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h1>FilmPort</h1>
+        <p>
+            Filmləri rahat şəkildə kəşf et və izlə.
+        </p>
+    </section>
+
+    <h2 class="section-title">Filmlər</h2>
+
+    <div class="movies" id="movies">
+
+        <div class="movie">
+            <div class="poster">
+                POSTER
+            </div>
+
+            <div class="movie-info">
+                <h3>Film 1</h3>
+                <p>2026 • Film</p>
+
+                <a href="#" class="watch">
+                    İzlə
+                </a>
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <div class="poster">
+                POSTER
+            </div>
+
+            <div class="movie-info">
+                <h3>Film 2</h3>
+                <p>2026 • Film</p>
+
+                <a href="#" class="watch">
+                    İzlə
+                </a>
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <div class="poster">
+                POSTER
+            </div>
+
+            <div class="movie-info">
+                <h3>Film 3</h3>
+                <p>2026 • Film</p>
+
+                <a href="#" class="watch">
+                    İzlə
+                </a>
+            </div>
+        </div>
+
+
+        <div class="movie">
+            <div class="poster">
+                POSTER
+            </div>
+
+            <div class="movie-info">
+                <h3>Film 4</h3>
+                <p>2026 • Film</p>
+
+                <a href="#" class="watch">
+                    İzlə
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- HILLTOPADS REKLAM YERİ -->
+    <div class="ad">
+        REKLAM
+    </div>
+
+</main>
+
+<footer>
+    © 2026 FilmPort
+</footer>
+
+
+<script>
+
+function searchMovies() {
+
+    let input =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    let movies =
+        document.querySelectorAll(".movie");
+
+    movies.forEach(function(movie) {
+
+        let title =
+            movie.querySelector("h3")
+            .innerText
+            .toLowerCase();
+
+        if (title.includes(input)) {
+            movie.style.display = "";
+        } else {
+            movie.style.display = "none";
+        }
+
+    });
+}
+
+</script>
+
+</body>
+</html>
