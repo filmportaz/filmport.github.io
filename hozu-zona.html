@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hozu Zona — FilmPort</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #09090b;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,12,0.97);
+    border-bottom: 1px solid #24242a;
+}
+
+.header {
+    max-width: 1150px;
+    margin: auto;
+    padding: 15px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+/* CONTAINER */
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 25px 15px 50px;
+}
+
+/* VIDEO PLAYER */
+
+.player {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+
+    border: 1px solid #29292f;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.player-placeholder {
+    text-align: center;
+    color: #666;
+}
+
+.player-placeholder .play-icon {
+    font-size: 55px;
+    margin-bottom: 12px;
+}
+
+.player-placeholder p {
+    font-size: 14px;
+}
+
+/* FILM INFO */
+
+.info {
+    margin-top: 25px;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 13px;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.meta span {
+    background: #18181c;
+    border: 1px solid #29292f;
+
+    padding: 7px 11px;
+
+    border-radius: 6px;
+
+    color: #aaa;
+    font-size: 13px;
+}
+
+.meta .rating {
+    color: #f5c518;
+}
+
+/* DESCRIPTION */
+
+.description-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.description {
+    max-width: 850px;
+
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+.back {
+    display: inline-block;
+
+    background: #e50914;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 11px 18px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    background: #c70710;
+}
+
+/* AD */
+
+.ad {
+    margin-top: 35px;
+
+    min-height: 100px;
+
+    background: #111114;
+
+    border: 1px dashed #333339;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #555;
+
+    font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #222;
+
+    padding: 28px 20px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .container {
+        padding: 15px 10px 40px;
+    }
+
+    .title {
+        font-size: 25px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .player {
+        border-radius: 8px;
+    }
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="header">
+
+        <a href="index.html" class="logo">
+            Film<span>Port</span>
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <!-- VIDEO PLAYER -->
+
+    <div class="player">
+
+        <!--
+        ==================================================
+        FILEDON VIDEO PLAYER
+
+        FileDon embed linkini aşağıdakı hissəyə
+        yerləşdirəcəyik.
+
+        Məsələn:
+
+        <iframe
+            src="FILEDON-EMBED-LINK"
+            allowfullscreen>
+        </iframe>
+
+        ==================================================
+        -->
+
+
+        <div class="player-placeholder">
+
+            <div class="play-icon">
+                ▶
+            </div>
+
+            <p>
+                Video hazırda əlavə edilməyib
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FILM INFORMATION -->
+
+    <section class="info">
+
+
+        <h1 class="title">
+            Hozu Zona
+        </h1>
+
+
+        <div class="meta">
+
+            <span>
+                🎬 Film
+            </span>
+
+            <span>
+                2026
+            </span>
+
+            <span>
+                Azərbaycan
+            </span>
+
+            <span class="rating">
+                ⭐ IMDb
+            </span>
+
+        </div>
+
+
+
+        <h2 class="description-title">
+            Film haqqında
+        </h2>
+
+
+        <p class="description">
+
+            Hozu Zona filmi haqqında məlumat
+            burada yerləşəcək.
+
+            Filmin süjetini, aktyor heyətini,
+            rejissor məlumatlarını və digər
+            məlumatları bu hissəyə əlavə edə bilərik.
+
+        </p>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <a href="index.html" class="back">
+                ← Filmlərə qayıt
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- REKLAM YERİ -->
+
+    <div class="ad">
+        REKLAM YERİ
+    </div>
+
+
+</main>
+
+
+
+<footer>
+
+    © 2026 FilmPort
+
+</footer>
+
+
+</body>
+</html>
