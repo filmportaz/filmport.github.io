@@ -1,199 +1,245 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hozu Zona — FilmPort</title>
+    <title>Hozu Zona — FilmPort</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body{
-    background:#09090b;
-    color:#fff;
-    font-family:Arial,sans-serif;
-}
+        body {
+            background: #08080b;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(10,10,12,.97);
-    border-bottom:1px solid #24242a;
-}
+        /* HEADER */
+        header {
+            height: 70px;
+            background: #0e0e12;
+            border-bottom: 1px solid #24242b;
 
-.header{
-    max-width:1150px;
-    margin:auto;
-    padding:15px 18px;
-}
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-.logo{
-    color:#fff;
-    text-decoration:none;
-    font-size:27px;
-    font-weight:800;
-}
+        .logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: 800;
+        }
 
-.logo span{
-    color:#e50914;
-}
+        .logo span {
+            color: #e50914;
+        }
 
-.container{
-    max-width:1150px;
-    margin:auto;
-    padding:25px 15px 50px;
-}
+        /* MAIN */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 25px 20px 50px;
+        }
 
-.player{
-    width:100%;
-    aspect-ratio:16/9;
-    background:#000;
-    border-radius:12px;
-    overflow:hidden;
-    border:1px solid #29292f;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+        /* VIDEO AREA */
+        .player {
+            width: 100%;
+            aspect-ratio: 16 / 9;
 
-.player iframe{
-    width:100%;
-    height:100%;
-    border:0;
-}
+            background: #000;
+            border: 1px solid #292930;
+            border-radius: 14px;
 
-.placeholder{
-    text-align:center;
-    color:#666;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-.placeholder .icon{
-    font-size:55px;
-    margin-bottom:12px;
-}
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
 
-.info{
-    margin-top:25px;
-}
+        .no-video {
+            text-align: center;
+            color: #777780;
+            padding: 20px;
+        }
 
-.title{
-    font-size:32px;
-    margin-bottom:13px;
-}
+        .no-video .icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+            color: #44444c;
+        }
 
-.meta{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-bottom:20px;
-}
+        .no-video p {
+            font-size: 15px;
+        }
 
-.meta span{
-    background:#18181c;
-    border:1px solid #29292f;
-    padding:7px 11px;
-    border-radius:6px;
-    color:#aaa;
-    font-size:13px;
-}
+        /* TITLE */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 18px;
+        }
 
-.rating{
-    color:#f5c518 !important;
-}
+        /* INFO */
+        .info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
 
-.description-title{
-    font-size:18px;
-    margin-bottom:8px;
-}
+        .badge {
+            background: #15151b;
+            border: 1px solid #292930;
+            border-radius: 8px;
+            padding: 10px 15px;
+            color: #d0d0d5;
+            font-size: 15px;
+        }
 
-.description{
-    max-width:850px;
-    color:#aaa;
-    font-size:15px;
-    line-height:1.7;
-}
+        .imdb {
+            color: #ffd700;
+        }
 
-.back{
-    display:inline-block;
-    margin-top:25px;
-    background:#e50914;
-    color:#fff;
-    text-decoration:none;
-    padding:11px 18px;
-    border-radius:7px;
-    font-size:14px;
-    font-weight:bold;
-}
+        /* DESCRIPTION */
+        .section-title {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
 
-.ad{
-    margin-top:35px;
-    min-height:100px;
-    background:#111114;
-    border:1px dashed #333339;
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#555;
-    font-size:12px;
-}
+        .description {
+            color: #b9b9c0;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
 
-footer{
-    border-top:1px solid #222;
-    padding:28px 20px;
-    text-align:center;
-    color:#666;
-    font-size:13px;
-}
+        /* BACK BUTTON */
+        .back {
+            display: inline-block;
+            background: #e50914;
+            color: white;
 
-@media(max-width:600px){
+            text-decoration: none;
+            font-weight: bold;
 
-    .container{
-        padding:15px 10px 40px;
-    }
+            padding: 13px 20px;
+            border-radius: 9px;
 
-    .title{
-        font-size:25px;
-    }
+            transition: 0.2s;
+        }
 
-    .description{
-        font-size:14px;
-    }
+        .back:hover {
+            background: #b80710;
+        }
 
-}
-</style>
+        /* FOOTER */
+        footer {
+            border-top: 1px solid #24242b;
+            background: #0e0e12;
+
+            text-align: center;
+            padding: 25px 15px;
+
+            color: #66666f;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            header {
+                height: 60px;
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .container {
+                padding: 18px 15px 40px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .player {
+                border-radius: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="player">
-    
-</header>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">
+            Film<span>Port</span>
+        </a>
+    </header>
 
-<main class="container">
 
+    <!-- MAIN -->
+    <main class="container">
 
-    <section class="info">
+        <!-- VIDEO AREA -->
+        <div class="player">
 
-        <h1 class="title">
-            Hozu Zona
-        </h1>
+            <div class="no-video">
+                <div class="icon">▶</div>
+                <p>Video hazırda əlavə edilməyib</p>
+            </div>
 
-        <div class="meta">
-            <span>🎬 Film</span>
-            <span>2026</span>
-            <span>Azərbaycan</span>
-            <span class="rating">⭐ IMDb</span>
         </div>
 
-        <h2 class="description-title">
+
+        <!-- MOVIE TITLE -->
+        <h1>Hozu Zona</h1>
+
+
+        <!-- MOVIE INFO -->
+        <div class="info">
+
+            <div class="badge">
+                🎬 Film
+            </div>
+
+            <div class="badge">
+                2026
+            </div>
+
+            <div class="badge">
+                Azərbaycan
+            </div>
+
+            <div class="badge imdb">
+                ⭐ IMDb
+            </div>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <h2 class="section-title">
             Film haqqında
         </h2>
 
@@ -203,21 +249,19 @@ footer{
             və digər məlumatları bu hissəyə əlavə edə bilərik.
         </p>
 
+
+        <!-- BACK -->
         <a href="index.html" class="back">
             ← Filmlərə qayıt
         </a>
 
-    </section>
+    </main>
 
-    <div class="ad">
-        REKLAM YERİ
-    </div>
 
-</main>
-
-<footer>
-    © 2026 FilmPort
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        © 2026 FilmPort. Bütün hüquqlar qorunur.
+    </footer>
 
 </body>
 </html>
