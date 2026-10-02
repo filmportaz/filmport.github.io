@@ -8,9 +8,9 @@
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
@@ -24,7 +24,6 @@
             height: 70px;
             background: #0e0e12;
             border-bottom: 1px solid #24242b;
-
             display: flex;
             align-items: center;
             padding: 0 20px;
@@ -33,7 +32,7 @@
         .logo {
             color: #ffffff;
             text-decoration: none;
-            font-size: 25px;
+            font-size: 26px;
             font-weight: 800;
         }
 
@@ -41,50 +40,56 @@
             color: #e50914;
         }
 
-        /* MAIN */
+        /* CONTAINER */
         .container {
             width: 100%;
             max-width: 1100px;
-            margin: 0 auto;
+            margin: auto;
             padding: 25px 20px 50px;
         }
 
-        /* VIDEO AREA */
+        /* VIDEO PLAYER */
         .player {
             width: 100%;
             aspect-ratio: 16 / 9;
-
             background: #000;
             border: 1px solid #292930;
             border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
 
+        .player iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* PLACEHOLDER */
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            overflow: hidden;
-            margin-bottom: 25px;
-        }
-
-        .no-video {
-            text-align: center;
+            flex-direction: column;
             color: #777780;
-            padding: 20px;
         }
 
-        .no-video .icon {
-            font-size: 45px;
+        .video-placeholder .play {
+            font-size: 55px;
+            color: #33333b;
             margin-bottom: 10px;
-            color: #44444c;
         }
 
-        .no-video p {
+        .video-placeholder p {
             font-size: 15px;
         }
 
         /* TITLE */
         h1 {
-            font-size: 36px;
+            font-size: 38px;
             margin-bottom: 18px;
         }
 
@@ -126,14 +131,11 @@
         .back {
             display: inline-block;
             background: #e50914;
-            color: white;
-
+            color: #ffffff;
             text-decoration: none;
             font-weight: bold;
-
             padding: 13px 20px;
             border-radius: 9px;
-
             transition: 0.2s;
         }
 
@@ -145,10 +147,8 @@
         footer {
             border-top: 1px solid #24242b;
             background: #0e0e12;
-
             text-align: center;
             padding: 25px 15px;
-
             color: #66666f;
             font-size: 14px;
         }
@@ -169,6 +169,10 @@
                 padding: 18px 15px 40px;
             }
 
+            .player {
+                border-radius: 10px;
+            }
+
             h1 {
                 font-size: 30px;
             }
@@ -181,8 +185,9 @@
                 font-size: 16px;
             }
 
-            .player {
-                border-radius: 10px;
+            .badge {
+                font-size: 14px;
+                padding: 9px 12px;
             }
         }
     </style>
@@ -201,26 +206,33 @@
     <!-- MAIN -->
     <main class="container">
 
-        <!-- VIDEO AREA -->
-        
+        <!-- VIDEO -->
+        <div class="player">
 
-        <!-- MOVIE TITLE -->
+            <!-- VIDEAS EMBED KODUNU BURAYA QOYACAĞIQ -->
+
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe width="100%" height="100%" src="https://app.videas.fr/embed/media/b666ca4d-165a-4075-9306-5ce3a7c183dd/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true" style="position: absolute; top: 0; left: 0" referrerpolicy="unsafe-url"></iframe></div>
+
+        </div>
+
+
+        <!-- TITLE -->
         <h1>Hozu Zona</h1>
 
 
-        <!-- MOVIE INFO -->
+        <!-- INFO -->
         <div class="info">
 
             <div class="badge">
                 🎬 Film
             </div>
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe width="100%" height="100%" src="https://app.videas.fr/embed/media/b666ca4d-165a-4075-9306-5ce3a7c183dd/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true" style="position: absolute; top: 0; left: 0" referrerpolicy="unsafe-url"></iframe></div>
+
             <div class="badge">
                 2026
             </div>
 
             <div class="badge">
-                Azərbaycan
+                🇦🇿 Azərbaycan
             </div>
 
             <div class="badge imdb">
